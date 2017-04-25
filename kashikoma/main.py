@@ -6,3 +6,5 @@ Created on Tue Apr 25 13:35:43 2017
 """
 
 print("kashikoma kakuzato!!!")
+
+print("yumekawa")
