@@ -6,6 +6,7 @@ Created on Thu Apr 20 15:42:16 2017
 """
 import numpy as np
 
+
 class Neuron():
     
     def __init__(self, timestep, simtime, numneu, vth, vfire, tau, vres, current):
@@ -23,11 +24,13 @@ class Neuron():
         self.nowstep = 0
         self.fire_flag = False
         
-    def propagation(self): 
-        print(self.nowstep)
+    def propagation(self, process): 
+        p = process
+        text = 'processing : ' + str(p)
+        print(text)
+        
         for i in range(0, self.numneu):            
             if self.fire_flag == True:
-                print("aaa")
                 self.vin[i, self.nowstep] = self.vres    
                 self.fire_flag = False
             
@@ -36,8 +39,9 @@ class Neuron():
             self.vin[i, self.nowstep + 1] = self.vin[i, self.nowstep] + self.dv
                     
             if self.vin[i, self.nowstep] >= self.vth:
-                print("bbb")
                 self.vin[i, self.nowstep ] = self.vfire    
                 self.fire_flag = True
                         
         self.nowstep += 1
+        
+        

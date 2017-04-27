@@ -42,3 +42,8 @@ print(ndarr1)
 # 出力結果
 # [[ 4.  5.]
 #  [ 7.  8.]]
+
+process = 4
+text = 'processing : ' + str(process)
+
+print(text)
